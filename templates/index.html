@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='/css/style.css')}}"
+    />
+    <title>index</title>
+  </head>
+  <body>
+    <table>
+      {%for i in range(y):%}
+      <tr>
+        {%for j in range(x):%} {%set my_color=color1%}
+        <div>
+          {%if (i+j)%2==0:%}
+          <td class="color{{(i+j)%2+1}}" style="--the_color: {{color1}}"></td>
+          {%else:%}
+          <td class="color{{(i+j)%2+1}}" style="--the_color: {{color2}}"></td>
+          {%endif%}
+        </div>
+        {%endfor%}
+      </tr>
+      {%endfor%}
+    </table>
+  </body>
+</html>
